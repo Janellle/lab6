@@ -7,7 +7,8 @@ app.use(express.static("public")); // to access images css/js/images/or any exte
 app.get("/", function(req, res){
     
     //res.send("<h1>hello!</h1>");
-    res.render("index.html");
+    console.log("In root route");
+    res.render("index.ejs");
 });
 
 app.get("/mercury", function(req, res){
@@ -18,13 +19,18 @@ app.get("/mercury", function(req, res){
 });
 
 app.get("/venus", function(req, res){
-    
-    res.send("<h1>Venus planet</h1>");
+    console.log("In venus route");
+    res.render("venus.ejs");
 });
 
 app.get("/mars", function(req, res){
-    
-    res.send("<h1>Mars planet</h1>");
+    console.log("In mars route");
+    res.render("mars.ejs");
+});
+
+app.get("/neptune", function(req, res){
+    console.log("In neptune route");
+    res.render("neptune.ejs");
 });
 
 app.listen(process.env.PORT, process.env.IP, function (){
